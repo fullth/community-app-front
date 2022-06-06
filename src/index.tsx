@@ -1,19 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Nav from './Nav/index';
+import "antd/dist/antd.css"
+import { Layout, Space, Card } from 'antd';
+const { Content, Footer } = Layout;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+  <>
+    <Layout className="layout">
+        <Nav />
+        <Content style={{ padding: '30px 50px' }}>
+          <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+            <Card title="Card" size="small">
+              <p>Card content</p>
+              <p>Card content</p>
+            </Card>
+            <Card title="Card" size="small">
+              <p>Card content</p>
+              <p>Card content</p>
+            </Card>
+            <Card title="Card" size="small">
+              <p>Card content</p>
+              <p>Card content</p>
+            </Card>
+          </Space>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>©2022 Created by fullth</Footer>
+      </Layout>
+  </>
+);
